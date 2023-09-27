@@ -1,0 +1,20 @@
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.activeColor {
+  margin: 20px;
+  padding-top: 5px;
+  height: 30px;
+  width: 10%;
+  border: 2px solid grey;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}

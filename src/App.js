@@ -1,8 +1,8 @@
 import React from 'react';
-// import HomePage from 'pages/HomePage';
-// import LoginPage from 'pages/LoginPage';
-// import RegisterPage from 'pages/RegisterPage';
-// import {Routes, Route} from 'react-router-dom';
+import { database } from 'firebase.js';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
 // import { db } from './firebase';
 // import {
 //   query,
@@ -16,9 +16,19 @@ import React from 'react';
 
 
 function App() {
+  const history = useNavigate();
+
+  const handleClick = ()=>{
+    signOut(database).then(val=>{
+      console.log(val, "out");
+      history('/');
+    });
+  }
+
   return (
   <div>
-    lalala
+    <h1>главная страница</h1>
+    <button onClick={handleClick}>SingOut (выйти)</button>
   </div>
   );
 }
